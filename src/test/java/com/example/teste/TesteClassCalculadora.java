@@ -45,7 +45,7 @@ public class TesteClassCalculadora {
     }
 
     @Test
-    public void tamanho(){
+    public void testTamanho(){
         Double[] v = {10.0,20.0,30.0};
         List<Double> lista = Arrays.asList(v);
 
@@ -55,15 +55,38 @@ public class TesteClassCalculadora {
     }
 
     @Test
-    public void mediana(){
+    public void testeValorMin(){
         Double[] v = {10.0,20.0,30.0};
         List<Double> lista = Arrays.asList(v);
 
         ReceboService receboService = new ReceboService();
 
-        Double m = 20.0;
-        Assert.assertEquals(m,receboService.mediana(lista));
+        Double m = 10.0;
+
+        Assert.assertEquals(m,receboService.valorMin(lista));
     }
 
+    @Test
+    public void testeValorMax(){
+        Double[] v = {10.0,30.0,20.0};
+        List<Double> lista = Arrays.asList(v);
 
+        ReceboService receboService = new ReceboService();
+
+        Double m = 30.0;
+
+        Assert.assertEquals(m,receboService.valorMax(lista));
+    }
+
+    @Test
+    public void testeSomaTodosValores(){
+        Double[] v = {10.0,30.0,20.0};
+        List<Double> lista = Arrays.asList(v);
+
+        ReceboService receboService = new ReceboService();
+
+        Double m = 60.0;
+
+        Assert.assertEquals(m,receboService.sum(lista));
+    }
 }

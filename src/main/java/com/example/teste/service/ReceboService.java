@@ -69,4 +69,24 @@ public class ReceboService {
         }
     }
 
+    public Double valorMin(List<Double> lista){
+        Collections.sort(lista);
+
+        return lista.get(0);
+    }
+
+    public Double valorMax(List<Double> lista){
+        Collections.sort(lista);
+
+        return lista.get(lista.size()-1);
+    }
+
+
+    public Double sum(List<Double> lista){
+        Double result = 0.0;
+        for(int i = 0; i < lista.size(); i++){
+            result += lista.get(i);
+        }
+        return result;
+    }
 }
